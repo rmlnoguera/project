@@ -1,0 +1,11 @@
+{% extends 'projectblog/base.html' %}
+
+{% block content %}
+        <h1>Delete Post</h1>
+        <form method="POST">
+         {% csrf_token %}
+         {% include 'projectblog/bs4_form.html' with form=form %}
+          <p>Are you sure you want to delete {{form.title}} ?</p>
+          <button type="delete" class="delete btn btn-default">Delete</button>
+        </form>
+{% endblock %}
